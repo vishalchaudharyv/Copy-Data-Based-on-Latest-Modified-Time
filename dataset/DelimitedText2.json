@@ -1,0 +1,84 @@
+{
+	"name": "DelimitedText2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"filename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().filename",
+					"type": "Expression"
+				},
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Retailer",
+				"type": "String"
+			},
+			{
+				"name": "Retailer ID",
+				"type": "String"
+			},
+			{
+				"name": "Invoice Date",
+				"type": "String"
+			},
+			{
+				"name": "Region",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "Product",
+				"type": "String"
+			},
+			{
+				"name": "Price per Unit",
+				"type": "String"
+			},
+			{
+				"name": "Units Sold",
+				"type": "String"
+			},
+			{
+				"name": "Total Sales",
+				"type": "String"
+			},
+			{
+				"name": "Operating Profit",
+				"type": "String"
+			},
+			{
+				"name": "Operating Margin",
+				"type": "String"
+			},
+			{
+				"name": "Sales Method",
+				"type": "String"
+			}
+		]
+	}
+}
